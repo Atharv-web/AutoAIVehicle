@@ -1,159 +1,304 @@
-Research Documentation:
+# BYD Shark 6: AI Enhanced Driver Safety System Research Documentation
 
-a) **Research Process**
-- Technologies explored:
-1. NFC Keyless Entry - The BYD Shark 6 features an NFC card reader for keyless entry and vehicle access. This allows you to unlock and lock the vehicle effortlessly by simply tapping the NFC card on the designated reader. Ideal for quick access during busy city commutes or weekend getaways.
-2. Remote Vehicle Control - With the MY BYD app, you can remotely lock/unlock the vehicle, control air conditioning, and monitor vehicle status. This ensures convenience and control, whether you're preparing for a drive or checking on your car from afar.
-3. Digital Key Functionality - The Shark 6 supports digital key functionality, enabling your smartphone to act as a key. This feature is perfect for tech-savvy users who prefer a streamlined, gadget-free experience during daily drives.
-4. OTA Software Updates - The vehicle offers Over The Air (OTA) updates, ensuring your car stays up to date with the latest features and improvements. This eliminates the need for service visits, making it ideal for busy professionals. These are wireless updates that can be downloaded and installed automatically over a wireless connection. No need to visit the dealership site also to install new updates.
-5. Real Time Vehicle Monitoring - The MY BYD app provides real time updates on battery status, tire pressure, and vehicle location. This feature is especially useful for long trips or ensuring your car is always in optimal condition.
-6. Voice Assistant and ADAS (Advanced driver assisted system). The various voice assistant features, voice commands, and the DMS (driver monitoring system). State of the art ADAS system with high quality in cabin cameras and IR sensors.
-7. Autopilot and Auto steering features - Lane Keeping Assist which vibrates the steering wheel to alert the driver when the vehicle drifts out of its lane. This ensures the car stays on course, especially during emergencies, enhancing safety on UAE highways. Emergency Lane Keeping Assist (ELKA) actively intervenes by steering the vehicle back into its lane if it detects an unintended departure. The Automatic Emergency Braking (AEB) system detects potential collisions and applies brakes automatically to avoid or reduce impact. This is particularly useful in heavy traffic or unexpected situations in city driving. Electronic Stability Control (ESC) adjusts braking and throttle to maintain vehicle stability during sharp turns or slippery conditions. This feature is vital for safe cornering and avoiding skids in challenging terrains. Blind Spot Assist uses sensors to monitor areas not visible to the driver and alerts them of nearby vehicles. This feature is especially helpful during lane changes or merging in busy UAE traffic.
+## Executive Summary
 
-- Existing Solutions in BYD Tech (Brief):
-1. DiPilot driver assistance system with DeepSeek AI integration, available across all models from budget to premium.
-2. DiLink intelligent cockpit with voice control ("Hi BYD"), rotatable touchscreen, and Android based system.
-3. XUANJI Architecture - integrated vehicle intelligence platform combining electrification with AI.
-4. Voice recognition for climate control, screen rotation, sunroof, windows etc.
-5. Driver Monitoring System (DMS) Camera - BYD's DMS system uses an OmniVision OV9284 CMOS image sensor with infrared capability and includes a simple processor, with signals processed by an external CPU.
-6. Front Camera - The BYD Shark 6 camera enhances visibility and safety during driving. It is part of the 360 degree camera system, providing a comprehensive view of the surroundings for easier navigation in tight spaces or busy city streets. This tech is the core of Adaptive Cruise Control. The front camera works in conjunction with the radar system to enable adaptive cruise control. This ensures a safe distance from the vehicle ahead, making highway driving in the UAE and foreign roadways more comfortable and stress free.
+This document presents comprehensive research findings on the BYD Shark 6's existing intelligent systems and proposes an enhanced touchless safety feature that leverages the vehicle's existing Driver Monitoring System (DMS) infrastructure. The proposed solution integrates contextual awareness and gaze tracking capabilities with the current IR sensor array to create a proactive, intelligent safety mechanism.
 
-- Key findings in the BYD AI tech:
-1. The "Integrated Vehicle Intelligence" Doctrine - BYD's strategy reimagines the car as a single unified intelligent system rather than isolated modules. Instead of relying on fragmented ECUs, it consolidates vehicle wide data into a central AI "brain" that perceives and reacts in milliseconds. This unified architecture enhances safety, comfort, personalization, and sets the direction for next gen intelligent vehicles.
-2. Xuanji Architecture: The Central Nervous System - BYD's Xuanji Architecture is a centralized intelligent platform standard on all models with God's Eye ADAS that acts as the vehicle's "brain and neural network". Its "1 brain, 2 ends, 3 networks, 4 chains" structure unifies computing, connectivity, sensing, and control into a single real time decision system. This centralized design enables advanced coordinated behaviors, OTA evolution, and positions BYD to compete on AI capability rather than hardware alone.
-3. The "God's Eye" (DiPilot) System - BYD's "God's Eye" ADAS (Advanced Driver Assisted System) platform uses a three tier DiPilot structure that scales sensor and compute hardware while keeping the core Xuanji intelligence architecture consistent across models. DiPilot 100 targets mass market cars with camera centric sensing and ~100 TOPS compute, DiPilot 300 adds LiDAR and stronger compute for premium models, and DiPilot 600 delivers multi LiDAR + 600 TOPS power for ultra luxury vehicles. This tiering maximizes market reach while enabling advanced autonomous functions at every price point.
-4. The Vertical Powerhouse - BYD's aggressive AI strategy is enabled by its exceptional vertical integration, which gives it unmatched control over cost, components, and innovation speed. With around 75% of vehicle parts made in house including batteries, motors, and electronics, BYD far surpasses competitors like Tesla in internal production share. This deep integration, extending even to its own shipping fleet, strengthens supply chain resilience and lets BYD rapidly scale and optimize its intelligent vehicle platform.
+---
 
-Technology Gaps I Noticed:
-1. No gesture control analysis system or gaze tracking analysis system currently implemented even though camera is capturing everything that the driver does (Eye tracking, head movement, facial expressions etc). The camera features are very good and highly functional with the use of IR technology with highly sensitive and functional sensors, this facilitates not just during the day but during night also.
+## 1. Research Process
 
-2. Voice Agent is present, but not intelligent and contextually aware. The voice agent activates when user says "Hi BYD". The voice agent has functionalities that is used for sunroof, climate system, radio, cruise control etc. 
+### 1.1 Technologies Explored in BYD Shark 6
 
-3. Enhanced security measures. This specifically concerns to a safety feature where the in cabin camera looks at the driver only for distraction, for eg. if a driver looks somewhere else except the road, you get a notification on the dashboard of the car to pay attention on the road. The car has this feature of basic distraction mechanism, but it needs a contextually aware voice assistant that is connected to the DMS (driver monitoring system) to assess not just attention, but medical condition also to facilitate the best safety feature.
+#### 1.1.1 NFC Keyless Entry
+The BYD Shark 6 incorporates an NFC card reader for keyless entry and vehicle access, enabling users to unlock and lock the vehicle through a simple tap gesture on the designated reader. This technology provides convenient access during urban commutes and leisure travel scenarios.
 
-Considering the technology at hand, BYD can easily integrate emotional awareness + gaze tracking with its IR sensors to make its voice assitant more responsive, more safer during any medical issues faced by drivers (anxiety, heart attack, drowsiness, panic attack, drunk, or concussed).
-This integration makes the AI communication more enhanced and increases the safety measures. With its Xuanji architecture, makes the integration seamless and cost effective. Currently the BYD tech is focussed on safety measures alone, with this they can make their security system to be more responsive and active. 
+#### 1.1.2 Remote Vehicle Control
+Through the MY BYD application, users can remotely manage vehicle functions including lock/unlock operations, climate control systems, and comprehensive vehicle status monitoring. This connectivity ensures convenient vehicle management regardless of physical proximity to the vehicle.
 
-- Sources and references:
-1.https://www.sciencedirect.com/science/article/pii/S0160791X21002712
-2.https://www.cnbc.com/2025/02/11/byd-rolls-out-driver-assist-tech-for-evs-with-deepseeks-ai-help.html
-3.https://www.byd.com/us/news-list/BYD-Launches-BYD-World-in-Partnership-with-AI-and-Metaverse-Company-MeetKai
-4.https://www.klover.ai/byd-ai-strategy-analysis-of-dominance-in-automotive/
-5.https://www.byd.com/en-hk/support/dilink
-6. youtube videos, youtube shorts.
+#### 1.1.3 Digital Key Functionality
+The Shark 6 supports digital key technology, allowing smartphones to function as primary vehicle keys. This feature caters to technology-oriented users seeking a streamlined, device-consolidated access experience during daily operations.
 
+#### 1.1.4 Over-The-Air (OTA) Software Updates
+The vehicle implements OTA update capabilities, enabling wireless download and installation of software improvements and feature enhancements. This eliminates the necessity for dealership service visits, providing continuous system evolution without user intervention. Updates are downloaded and installed automatically over wireless connections, removing the need for physical dealership visits for software maintenance.
 
-b) **Design Decisions**
-- Why did you choose this specific touchless feature?
-Invisible Safety Net:- This touchless feature is a great feature for BYD to implement in their vehicles. They have the tech stack for it, the resources, camera, sensors. By implementing this safety net, the voice assistant becomes contextually aware of the driver's current state and is more prepared and proactive towards safety measure. Great leap in BYD tech and safety system.
+#### 1.1.5 Real-Time Vehicle Monitoring
+The MY BYD application delivers real-time telemetry including battery status, tire pressure monitoring, and vehicle location tracking. This functionality proves particularly valuable for extended journeys and maintaining optimal vehicle condition throughout the ownership lifecycle.
 
-- What user problems does it solve?
-1. Information overload - if there is any features that the driver cannot find, the gaze shows what they are looking at. The voice assistant can ask the driver what information are they curious about and conversate with them. This is a great step in building conversational AI within vehicles.
-2. Stress during driving - Sometimes when drivers are in a stressed situation or worried about something, the voice assitant can help with normalizing the mood and its responses.
-3. Context awareness - Current voice assitants are not contextually aware,  therefore in matters of urgency the emotion detection can lead the way for a seamless experience and BYD has the technology to make their emotion detection algorithm to be a State of the art mechanism.
+#### 1.1.6 Voice Assistant and Advanced Driver Assistance Systems (ADAS)
+The vehicle features comprehensive voice command capabilities integrated with a state-of-the-art ADAS system. This includes high-quality in-cabin cameras, infrared sensors, and the Driver Monitoring System (DMS), providing multiple layers of intelligent assistance and safety monitoring.
 
-- Why is it better than the current v1 experience?
-The current ADA (Advanced Driver Assistance) - The car includes a suite of driver assistance features like Lane Departure Warning and Emergency Lane Keeping Assist. These systems enhance safety and convenience, especially during long commutes or highway travel.
-Current version of voice assitant is good but limited to only voice features. 
-Version 2 Connects the voice assistant to the in cabin camera to also look at the drivers behavioral state. This makes it:
-1. Proactive
-2. anticipates needs (through driver behavior detection)
-3. voice assistant becomes contextually aware for safety measures ensuring quick response, enhancing the BYD DMS features.
-4. the auto pilot connection works with voice assistant to provide instant response.
+#### 1.1.7 Autonomous Driving Features
 
-why this feature?
-Hardware exists - BYD already has DMS camera with required capabilities
-Software only solution - No new sensors needed, cost effective
-Fills capability gap - DMS hardware underutilized (only safety, not assistance)
+The BYD Shark 6 implements several advanced safety and autonomous driving features:
 
-- What are the technical trade-offs?
-1. Reliability vs. Lighting Conditions (The "Night Drive" Problem) - This is a huge vulnerability in the current architecture due to the use of webcam rather than a high quality camera with IR sensor technology that can accurately map a persons features, scenarios in the night time can be tricky due to poor quality.
-System relies on visible light.
-Standard webcams cannot see through dark sunglasses also. An IR sensor can see the eyes through the tint.
-we are using standard RGB input (webcam) instead of infrared (IR).
+**Lane Keeping Assist (LKA)**: Provides haptic feedback through steering wheel vibration when the vehicle deviates from its designated lane. This system ensures proper lane positioning, particularly beneficial during emergency situations on highways including UAE roadways.
 
-2. Privacy vs. Performance (The "Edge" Problem)
-You are doing all inference On Device (Edge) via WebGL.
-The Upside (Privacy): No video data is sent to a server. This is a massive selling point for users paranoid about "spy cars."
-Garbage Collection - JavaScript is garbage collected. You might see "microstutters" or "flickering" where the video freezes for 200ms while the browser clears memory. In a safety system, 200ms is a long time.
+**Emergency Lane Keeping Assist (ELKA)**: Actively intervenes by steering the vehicle back into the correct lane upon detecting unintended lane departure, providing an additional layer of active safety intervention.
 
-3. Latency vs. Accuracy (The Model Size)
-You are likely using the lite version of the model for speed, but the range might be limited.
-If the driver leans back in the seat (increasing distance from camera) or turns their head 45 degrees (profile view), the Lite model often loses the tracking mesh completely. A heavier model handles rotation better but destroys frame rate. In real scenario the cars IR sensors would provide a much clearer tracking mesh resulting in higher accuracy.
+**Automatic Emergency Braking (AEB)**: Detects potential collision scenarios and automatically applies braking force to avoid or mitigate impact severity. This feature proves particularly beneficial in high-density traffic conditions and unexpected urban driving situations.
 
-====================================================
-c) **Implementation Approach**
-- What technologies/libraries/APIs did you use?
-Tech used: 
-1. Core AI Engine - Tensorflow.js with WebGL backend for GPU acceleration.
-2. Computer Vision Model - MediaPipe FaceMesh.
-3. Gemini2.0-flash model as LLM to provide context aware responses with. 
-4. WebRTC for webcam access.
-5. Web Speech API for TTS alerts.
+**Electronic Stability Control (ESC)**: Dynamically adjusts braking force distribution and throttle response to maintain vehicle stability during sharp maneuvers or adverse road conditions. This feature is essential for safe cornering and skid prevention in challenging terrain environments.
 
-- Architecture and Design Patterns.
-Application is a simple structured security safety net for demonstration purposes. This application has 2 modes of checking.. 
-1. a video player access - for demo purposes, it shows a real time video where a content creator almost falls asleep while driving.
-2. few simulation scenarios like anxiety attack, heart attack, etc. This mode simulates the behavioral pattern of these scenarios to alert the system for safety measures.
+**Blind Spot Assist**: Utilizes sensor arrays to monitor vehicle blind spots and provides alerts regarding nearby vehicles. This feature enhances safety during lane changes and merging operations, particularly in high-density UAE traffic conditions.
 
-- Key technical challenges you encountered
-1. Problem - Signal Noise & False Positives:- Due to the webcamera as the in cabin camera, the raw landmark detection is jittery sometimes and there is no accurate information passed to the computer vision model and hence there are chances where false positives can occur.
-Solution - implemented buffer decay system, instead of triggering an immediate alert, it increments a counter, if the counter exceeds a specific threshold, the trigger is fired. This is useful in scenarios where the driver might just yawn or open their mouth randomly.
+### 1.2 Existing BYD Technology Solutions
 
-2. Problem - Translating geometry to behavior Psychology:- The AI engine provides us points like this type of data -> (e.g., "Lip Top: [x,y], Lip Bottom: [x,y]"), but we need to detect abstract concepts with accurate behavioral patterns. In real scenario the IR sensors provide much better information to map out to behavioral traits (ML model is also possible, but will result in a heavier architecture to integrate with vehicle).
-Solution - EAR (eye aspect ratio) and MAR (mouth aspect ratio). These calculate the openness of the eye to detect various patterns like being drunk, being sleepy, fatigue, mouth patterns etc. It measures head movement also to detect erratic behavior.
+#### 1.2.1 DiPilot Driver Assistance System
+BYD's DiPilot system integrates DeepSeek AI technology across the entire model range, from budget-tier to premium vehicles, providing consistent intelligent assistance capabilities regardless of price point.
 
-3. Problem - Dataset curation for training and for testing :- There is very less public data (real time data) for testing any medical issues occured during driving. The datasets that were available are very large and require formatting, long training and testing scenarios for the model to detect all scenarios accurately.  
-Solution - Simulations of scenarios like driver being drunk, driver having a panic or an anxiety attack, driver having a heart attack etc is used for detecting behavioral response.
-Video uploading for demonstration purpose- real life content creator sleeps (fatigued) during car driving (real time feed to test the system)
+#### 1.2.2 DiLink Intelligent Cockpit
+The DiLink system features voice activation through "Hi BYD" commands, a rotatable touchscreen interface, and an Android-based operating system providing comprehensive vehicle control and connectivity.
 
-d) **Learnings & Insights**
-- What did you learn during this research?
-1. BYD has made a feat of innovation in vehicle manufacturing in the automotive industry. Blending in house manufacturing with intelligence by implementing technology at its best for all features for the car. Using the concept of NFC keyless entry, MY BYD app for all time monitoring of car performance, the OTA updates etc. puts BYD at the forefront of intelligent autonomous vehicles. The concept of unit economics that BYD has cracked, from manufacturing all their parts to integrating the vehicles with cameras, sensors, state of the art intelligent cockpit system, DMS(driver monitoring software) and much more.
+#### 1.2.3 XUANJI Architecture
+This integrated vehicle intelligence platform serves as the foundational framework combining electrification with artificial intelligence, creating a unified intelligent vehicle ecosystem.
 
-2. How well the BYD has utilized maximum technologies in the vehicle to maintain safety checks, software updates. Integrating appropriate tech into vehicles to make them truly intelligent autonomous vehicles. The most fascinating part is they have not left any place for something new and innovative. It was very difficult to find out the in cabin safety loop hole. Best implementation of tech to blend with automotive fundamentals to bring out the best innovations in automotive industry that also with lower costs compared to market competitors like Mercedez Benz, BMW, Hyundai/Kia, Toyota etc. 
+#### 1.2.4 Voice Recognition Capabilities
+The system supports voice commands for climate control, screen rotation, sunroof operation, window control, and additional vehicle functions, enabling hands-free operation of primary comfort and convenience features.
 
-3. The Nuance of Computer Vision Logic:- 
-Geometry vs. AI Models: While deep learning models are powerful, simple geometric heuristics (like Eye Aspect Ratio or Mouth Aspect Ratio) are often faster, more  interpretable, and easier to tune for real time browser applications than heavy neural networks.
-Calibration is Critical: A static threshold (e.g "EAR < 0.2") fails in the real world because every camera, face shape, and lighting condition is different. Building dynamic calibration tools is essential for usability.
-Video Forensics: Handling pre recorded video requires different logic (requestVideoFrameCallback) than a live webcam stream (requestAnimationFrame) to ensure frame perfect analysis without skipping critical data points.
+#### 1.2.5 Driver Monitoring System (DMS) Camera
+BYD's DMS utilizes an OmniVision OV9284 CMOS image sensor with infrared capabilities and integrated processing. The system includes a dedicated processor with signals managed by an external CPU for comprehensive driver monitoring and analysis.
 
-- What surprised you?
-1. Why hasnt BYD done this safety net idea yet in all their models, they have high quality cameras, high level sensors and Gods Eye, with amazing state of the art intelligence core for their vehicles. The in cabin safety system in sync with their voice asssistant is a great step ahead in safety regards of autonomous vehicles.
+#### 1.2.6 Front Camera System
+The Shark 6's front camera enhances visibility and safety as part of an integrated 360-degree camera system, providing comprehensive environmental awareness for navigation in confined spaces and dense urban environments. This camera serves as the primary sensor for Adaptive Cruise Control functionality, working in conjunction with radar systems to maintain safe following distances. This integration ensures comfortable and stress-free highway driving on UAE and international roadways.
 
-2. XUANJI Architecture is a vehicular intelligent architecture that serves as both the brain and neural network of the vehicle, enabling an efficient blend of electrification and intelligence.
-This architecture is made up of:
-1 Brain -> Self developed smart central control chip
-2 Ends -> (Dual AI System): Cloud AI - Backend processing, large scale data training, Vehicle AI:- Real time onboard decision making. Industry's first dual AI large model application in whole vehicle BYD
-3 Networks -> Vehicle network (V2V, V2I communication), 5G network (high speed connectivity), Satellite network (global coverage)
-4 Chains -> Sensor Chain: Cameras, LiDAR, radar, ultrasonic sensors, Controller Chain: ECUs, domain controllers, Data Chain: Real time data collection and processing, Mechanical Chain: Motors, steering, braking systems.
+### 1.3 Key Findings in BYD AI Technology
 
-3. How well organized the safety measures are integrated into the vehicles. It also consists of a 360 view of outside the car, that is a great feature in a vehicle. Best use while overtaking on international roadways. You get the front and back view to adjust your speed and have a clear vision and judgement between the vehicles ahead and behind you. This would cause a significant reduction in road rage accidents.
+#### 1.3.1 The "Integrated Vehicle Intelligence" Doctrine
+BYD's strategic approach reconceptualizes the vehicle as a unified intelligent system rather than a collection of discrete modules. Instead of relying on fragmented Electronic Control Units (ECUs), this architecture consolidates vehicle-wide data into a centralized AI processing core capable of millisecond-level perception and response. This unified architecture enhances safety, comfort, and personalization capabilities while establishing a framework for next-generation intelligent vehicles.
 
-- What would you do differently in v3?
-1. Try to develop a distilled DL Model that detects the drivers behavioral pattern and aims to be precise at differentiating casual gestures and movements to real medical related issues (like seizures etc.)
-2. Using deepseek model as inference for demonstration. But due to latency issues of local deepseek model (from ollama) conflicting with  
-the video and webcam feed, resulting in lag response by the voice assistant, it is not implemented in the current version.
-3. Figure out a way to use trained DL model without having a major tradeoff with RAM space and fast response mechansim, at the edge level. Currently BYD uses deepseek AI tech at edge level with their vehicles using their dual AI application.
+#### 1.3.2 XUANJI Architecture: The Central Nervous System
+BYD's XUANJI Architecture functions as a centralized intelligent platform standardized across all models equipped with God's Eye ADAS, acting as the vehicle's computational brain and neural network. Its "1 brain, 2 ends, 3 networks, 4 chains" structural framework unifies computing, connectivity, sensing, and control into a single real-time decision-making system. This centralized design enables advanced coordinated behaviors, OTA evolution capabilities, and positions BYD to compete on AI capability rather than hardware specifications alone.
 
-- Limitations of your current prototype
-1. Hardware & Performance:
-Camera dependency: The entire system relies heavily on a single webcam input. Performance will degrade significantly in poor lighting conditions (night driving, tunnels, shadows).
-Field of view: A standard webcam might not capture the driver's full face if they turn their head significantly, leading to loss of tracking.
-Resolution/frame rate: Lower quality webcams will produce noisy data, affecting the accuracy of facial landmark detection and vital sign estimation.
-Browser based limitations: Running complex computer vision (TensorFlow.js) and physics simulations in a browser tab is resource intensive. It may cause lag or battery drain on mobile devices or lower end laptops.
+#### 1.3.3 The "God's Eye" (DiPilot) System
+BYD's "God's Eye" ADAS platform implements a three-tier DiPilot structure that scales sensor and computational hardware while maintaining core XUANJI intelligence architecture consistency across models:
 
-2. Algorithm & accuracy:
-Simulations: The heart rate (HR) and breathing rate (BR) are simulated estimates, not medical level measurements. They are derived from facial cues (mouth open, eyes closed) and a logic model, not actual sensors. This means it can be inaccurate also at times. Adrenaline/Stress Model: The adrenaline variable is a simplified heuristic. Real physiological stress is far more complex and doesn't always correlate directly with mouth openness or eye closure.
+- **DiPilot 100**: Targets mass-market vehicles with camera-centric sensing and approximately 100 TOPS computational power
+- **DiPilot 300**: Incorporates LiDAR capability and enhanced computing resources for premium model segments
+- **DiPilot 600**: Delivers multi-LiDAR configuration with 600 TOPS computational power for ultra-luxury vehicle applications
 
-Facial Landmark Reliance :- 
-Occlusion: Glasses, sunglasses, masks, or facial hair could obstruct key landmarks (eyes, mouth), breaking the detection logic.
-Pose Sensitivity: Extreme head angles (looking down at a phone, looking back) might cause the face mesh detection to fail or produce erratic results.
-Thresholds are Hardcoded: Values like PANIC_THRESHOLD_MAR (0.45) and FAINT_THRESHOLD_EAR (0.40) in config.js are static. Different people have different resting face shapes. A person with naturally smaller eyes might trigger false drowsiness alerts.
+This tiered approach maximizes market reach while enabling advanced autonomous functions across all price points.
 
-- Future enhancement possibilities
-1. Edge AI optimization - optimize models to run efficiently on specialized automotive chips.
-2. Offline capability - providing offline capability to ensure all safety features work (not just landmarks detection, but also local inferencing)
-3. Privacy and Security enhancements - usage of local data processing techniques so that sensitive info like biometric data dont leak and leave the vehicle.
-4. Maybe add augmented reality HUD - project safety alerts and navigation arrows directly into windshield, but again that has to sit well with the security protocols and regulations of BYD.
-5. Multi person tracking - If feasible in cost and architecture wise then expand the system to monitor all passengers. Either a larger field view for the camera near driver or another small camera on top of the touchscreen pad or integrated into the pad. 
+#### 1.3.4 The Vertical Powerhouse
+BYD's aggressive AI strategy is enabled by exceptional vertical integration, providing unmatched control over cost structures, component sourcing, and innovation velocity. With approximately 75% of vehicle components manufactured in-house—including batteries, motors, and electronics—BYD significantly exceeds competitors such as Tesla in internal production share. This deep integration extends to proprietary shipping operations, strengthening supply chain resilience and enabling rapid scaling and optimization of the intelligent vehicle platform.
+
+### 1.4 Identified Technology Gaps
+
+#### 1.4.1 Absence of Gesture Control and Gaze Tracking Analysis
+Despite the DMS camera's capability to capture comprehensive driver behavior data (eye tracking, head movement, facial expressions), no gesture control or gaze tracking analysis system is currently implemented. The existing camera infrastructure features high-quality sensors with IR technology and highly sensitive functional sensors, providing robust functionality in both daylight and nighttime conditions.
+
+#### 1.4.2 Limited Voice Agent Intelligence
+While a voice agent exists (activated via "Hi BYD" command) with functionality for sunroof, climate system, radio, and cruise control operations, the system lacks contextual awareness and intelligent processing capabilities beyond basic command execution.
+
+#### 1.4.3 Basic Driver Distraction Monitoring
+The current in-cabin camera system monitors driver distraction through basic attention detection mechanisms. For example, when driver attention deviates from the road, the system provides dashboard notifications to redirect attention. However, the system lacks integration with a contextually aware voice assistant connected to the DMS for comprehensive assessment of driver medical conditions, limiting implementation of advanced safety features.
+
+### 1.5 Proposed Enhancement: Intelligent Safety Integration
+
+Considering the existing technology infrastructure, BYD can integrate contextual awareness and gaze tracking capabilities with its IR sensors to create a more responsive and enhanced safety oriented voice assistant system. This enhancement would enable detection and appropriate response to medical conditions including anxiety, cardiac events, drowsiness, panic attacks, impairment, or concussion.
+
+This integration significantly enhances AI communication capabilities and safety measures. The existing XUANJI architecture facilitates seamless and cost effective integration. While current BYD technology focuses primarily on passive safety measures, this enhancement would transform the security system into a proactive, actively responsive safety platform.
+
+### 1.6 Research Sources and References
+
+1. ScienceDirect: https://www.sciencedirect.com/science/article/pii/S0160791X21002712
+2. CNBC: https://www.cnbc.com/2025/02/11/byd-rolls-out-driver-assist-tech-for-evs-with-deepseeks-ai-help.html
+3. BYD Press Release: https://www.byd.com/us/news-list/BYD-Launches-BYD-World-in-Partnership-with-AI-and-Metaverse-Company-MeetKai
+4. Klover AI Analysis: https://www.klover.ai/byd-ai-strategy-analysis-of-dominance-in-automotive/
+5. BYD DiLink Documentation: https://www.byd.com/en-hk/support/dilink
+6. Video documentation and analysis from YouTube platform
+
+---
+
+## 2. Design Decisions
+
+### 2.1 Feature Selection Rationale: The Invisible Safety Net
+
+The proposed touchless safety feature represents an optimal enhancement opportunity for BYD vehicles based on existing technological infrastructure. With the complete technology stack already deployed—including cameras, sensors, and processing capabilities—implementing this safety net enables the voice assistant to become contextually aware of the driver's current physiological and psychological state, facilitating proactive safety interventions. This advancement represents a significant evolution in BYD's technology portfolio and safety system capabilities.
+
+### 2.2 User Problems Addressed
+
+#### 2.2.1 Information Overload Management
+Gaze tracking capabilities enable identification of interface elements capturing driver attention. The voice assistant can proactively query the driver regarding specific information needs and engage in contextual conversation, representing a significant advancement in conversational AI implementation within vehicle environments.
+
+#### 2.2.2 Stress Mitigation During Operation
+When drivers experience stressful situations or heightened concern levels, the voice assistant can assist with mood normalization through appropriate response modulation and supportive interactions.
+
+#### 2.2.3 Contextual Awareness Enhancement
+Current voice assistants lack contextual awareness capabilities, limiting their effectiveness in urgent situations. Advanced detection capabilities enable seamless emergency response experiences. BYD possesses the technological foundation to develop state of the art detection algorithms leveraging existing hardware infrastructure.
+
+### 2.3 Advantages Over Current Implementation (Version 1)
+
+#### 2.3.1 Current Advanced Driver Assistance (ADA) Capabilities
+The existing system includes a comprehensive suite of driver assistance features including Lane Departure Warning and Emergency Lane Keeping Assist. These systems enhance safety and convenience during extended commutes and highway travel scenarios. However, the current voice assistant implementation is limited to basic voice-activated functions without behavioral awareness.
+
+#### 2.3.2 Proposed Version 2 Enhancements
+The enhanced system integrates the voice assistant with the in-cabin camera to analyze driver behavioral states in real-time, creating a system characterized by:
+
+1. **Proactive Operation**: The system anticipates driver needs through behavioral pattern detection and analysis
+2. **Enhanced Anticipation**: Driver behavior detection enables needs anticipation before explicit requests
+3. **Contextual Awareness**: Voice assistant becomes contextually aware for safety-focused responses, ensuring rapid reaction capabilities and enhancing existing BYD DMS features
+4. **Integrated Response**: Autopilot system connection enables instant coordinated emergency response capabilities
+
+#### 2.3.3 Implementation Advantages
+
+**Existing Hardware Infrastructure** BYD's DMS camera possesses all required sensing and processing capabilities for the proposed enhancement.
+
+**Software Only Solution** Implementation requires no additional sensor hardware, ensuring cost effectiveness through software based enhancement of existing capabilities.
+
+**Capability Gap Resolution** Current DMS hardware is underutilized, focusing solely on passive safety monitoring rather than active driver assistance and intervention.
+
+### 2.4 Technical Trade-offs
+
+#### 2.4.1 Reliability versus Lighting Conditions: The Night Drive Challenge
+This represents a significant vulnerability in webcam based prototype implementations due to reliance on visible light spectrum. Standard webcams exhibit performance degradation in low light conditions and cannot function effectively with dark sunglasses, as the system relies on visible light input. The prototype utilizes standard RGB input from webcam sensors instead of infrared technology. In contrast, BYD's IR sensor technology can accurately map facial features and detect eye position through tinted eyewear, providing superior performance in nighttime driving scenarios.
+
+#### 2.4.2 Privacy versus Performance: The Edge Computing Challenge
+The prototype implements edge based inference using WebGL for on device processing.
+
+**Privacy Advantages** No video data transmission to external servers occurs, addressing privacy concerns regarding vehicle surveillance and representing a significant value proposition for privacy conscious users.
+
+**Performance Challenges** JavaScript garbage collection can introduce micro stutters or flickering with approximately 200ms freeze durations during memory cleanup operations. In safety critical systems, 200ms delays represent significant timing concerns that could impact response effectiveness.
+
+#### 2.4.3 Latency versus Accuracy: The Model Size Challenge
+The prototype likely utilizes a lightweight model variant for performance optimization, potentially limiting operational range and accuracy. Driver movements such as leaning backward (increasing camera distance) or 45 degree head rotation (profile view) can cause complete tracking mesh loss in lite models. While heavier models provide improved rotation handling and tracking stability, they significantly impact frame rate performance. In production implementations, BYD's IR sensors would provide superior tracking mesh quality with enhanced depth perception, resulting in substantially higher accuracy across varied driver positions and movements.
+
+---
+
+## 3. Implementation Approach
+
+### 3.1 Technologies, Libraries, and APIs Utilized
+
+The prototype implementation incorporates the following technology stack:
+
+1. **Core AI Engine** TensorFlow.js with WebGL backend for GPU acceleration
+2. **Computer Vision Model** MediaPipe FaceMesh for facial landmark detection
+3. **Large Language Model** Gemini 2.0 flash model for context aware response generation
+4. **Video Capture** WebRTC for webcam access and real time video stream processing
+5. **Audio Output** Web Speech API for text to speech alert generation
+
+### 3.2 Architecture and Design Patterns
+
+The application implements a structured security safety demonstration system with dual operational modes:
+
+**Mode 1: Video Player Analysis** Demonstrates real time analysis capabilities using recorded content showing a driver experiencing fatigue related drowsiness during actual driving conditions. This mode validates the system's detection algorithms against real world scenarios.
+
+**Mode 2: Simulation Scenarios** Simulates behavioral patterns for various medical emergency scenarios including anxiety attacks and cardiac events, enabling systematic testing of safety measure activation protocols and response mechanisms.
+
+### 3.3 Key Technical Challenges and Solutions
+
+#### 3.3.1 Challenge: Signal Noise and False Positives
+
+**Problem Statement** Raw landmark detection from webcam sources exhibits jitter and instability, resulting in inaccurate data transmission to the computer vision model. This inconsistency increases the probability of false positive detections, potentially triggering inappropriate alerts.
+
+**Solution Implemented** A buffer decay system was implemented utilizing incremental counters. Rather than immediate alert triggering upon detection, the system increments a counter that must exceed a defined threshold before alert activation. This approach effectively filters transient behaviors such as yawning or random mouth opening, reducing false positive rates while maintaining sensitivity to sustained behavioral changes.
+
+#### 3.3.2 Challenge: Translating Geometric Data to Behavioral Psychology
+
+**Problem Statement** The AI engine provides geometric coordinate data (for example, "Lip Top: [x,y], Lip Bottom: [x,y]"), but the system must detect abstract behavioral concepts and accurate psychological patterns. In production scenarios, IR sensors provide substantially improved information for mapping to behavioral traits. While machine learning models represent an alternative approach, they would result in heavier computational architecture requirements for vehicle integration.
+
+**Solution Implemented** Eye Aspect Ratio (EAR) and Mouth Aspect Ratio (MAR) algorithms were implemented. These geometric heuristics calculate the openness levels of eyes and mouth to detect various behavioral patterns including impairment, drowsiness, and fatigue. The system also measures head movement patterns to detect erratic behavior indicative of medical distress or attention loss.
+
+#### 3.3.3 Challenge: Dataset Curation for Training and Testing
+
+**Problem Statement** Public availability of real time driving data depicting medical emergencies is extremely limited. Available datasets are voluminous and require extensive formatting, prolonged training cycles, and comprehensive testing scenarios for the model to accurately detect all emergency conditions.
+
+**Solution Implemented** Simulation based approach for scenarios including driver impairment, panic or anxiety attacks, and cardiac events was utilized for detecting behavioral response patterns. Additionally, video upload functionality was implemented for demonstration purposes, utilizing real life content where a content creator experiences fatigue induced drowsiness during actual vehicle operation, providing authentic real time feed data for system validation.
+
+---
+
+## 4. Learnings and Insights
+
+### 4.1 Key Research Learnings
+
+#### 4.1.1 BYD's Innovation Achievement in Vehicle Manufacturing
+
+BYD has achieved a remarkable feat of innovation in the automotive industry by seamlessly blending in house manufacturing with intelligent systems implementation. The integration of technologies including NFC keyless entry, the MY BYD application for continuous vehicle performance monitoring, and OTA update capabilities positions BYD at the forefront of intelligent autonomous vehicle development. The unit economics model that BYD has successfully implemented, encompassing manufacturing of proprietary components to vehicle integration with cameras, sensors, state of the art intelligent cockpit systems, and Driver Monitoring Software, demonstrates comprehensive vertical integration excellence.
+
+#### 4.1.2 Comprehensive Technology Utilization
+
+BYD has demonstrated exceptional utilization of available technologies within vehicle systems to maintain safety checks and enable continuous software updates. The integration of appropriate technologies transforms vehicles into genuinely intelligent autonomous systems. The most notable aspect is the comprehensive nature of BYD's implementation, leaving minimal opportunities for additional innovation. Identifying the in cabin safety enhancement opportunity proved challenging given the thorough existing implementation. BYD represents best in class implementation of technology integration with automotive fundamentals, delivering superior innovations at lower costs compared to market competitors including Mercedes Benz, BMW, Hyundai/Kia, and Toyota.
+
+#### 4.1.3 Computer Vision Logic Nuances
+
+**Geometry versus AI Models** While deep learning models possess significant power, simple geometric heuristics (such as Eye Aspect Ratio or Mouth Aspect Ratio) often provide faster execution, greater interpretability, and easier tuning for real time browser applications compared to computationally intensive neural networks.
+
+**Calibration Criticality** Static thresholds (for example "EAR < 0.2") fail in real world deployment because every camera, facial structure, and lighting condition presents unique characteristics. Building dynamic calibration tools is essential for system usability and accuracy across diverse user populations.
+
+**Video Forensics Requirements** Handling pre recorded video requires different processing logic (requestVideoFrameCallback) compared to live webcam streams (requestAnimationFrame) to ensure frame perfect analysis without skipping critical data points that could indicate emergency conditions.
+
+### 4.2 Surprising Discoveries
+
+#### 4.2.1 Unexplored Safety Net Opportunity
+
+The primary surprise centers on why BYD has not yet implemented this safety net concept across all model variants. The company possesses high quality cameras, advanced sensor arrays, the God's Eye system, and state of the art intelligence cores throughout their vehicle lineup. The synchronization of in cabin safety systems with voice assistant capabilities represents a significant advancement in autonomous vehicle safety protocols.
+
+#### 4.2.2 XUANJI Architecture Sophistication
+
+The XUANJI Architecture functions as a vehicular intelligent architecture serving simultaneously as both the computational brain and neural network of the vehicle, enabling an efficient synthesis of electrification and intelligence. This architecture comprises:
+
+**1 Brain** Self developed smart central control chip providing centralized processing
+
+**2 Ends (Dual AI System)** Cloud AI handles backend processing and large scale data training, while Vehicle AI manages real time onboard decision making. This represents the industry's first dual AI large model application in whole vehicle systems by BYD.
+
+**3 Networks** Vehicle network (V2V, V2I communication), 5G network (high speed connectivity), and Satellite network (global coverage) providing comprehensive connectivity across all operational environments.
+
+**4 Chains** Sensor Chain (cameras, LiDAR, radar, ultrasonic sensors), Controller Chain (ECUs, domain controllers), Data Chain (real time data collection and processing), and Mechanical Chain (motors, steering, braking systems) enabling complete vehicle integration.
+
+#### 4.2.3 Comprehensive Safety Measure Integration
+
+The exceptional organization and integration of safety measures throughout BYD vehicles is noteworthy. The system includes a 360 degree external view capability, representing an excellent feature for vehicle operation. This proves particularly valuable during overtaking maneuvers on international roadways, providing simultaneous front and rear visibility to adjust speed with clear judgment regarding surrounding vehicle positions. This capability could contribute to significant reduction in road rage related accidents through improved situational awareness.
+
+### 4.3 Future Version 3 Improvements
+
+#### 4.3.1 Distilled Deep Learning Model Development
+Development of a distilled deep learning model that detects driver behavioral patterns with precision in differentiating casual gestures and movements from genuine medical emergency issues (such as seizures and other acute medical conditions).
+
+#### 4.3.2 DeepSeek Model Integration
+Exploration of DeepSeek model implementation for inference in the demonstration system. However, latency issues with local DeepSeek model deployment (from Ollama) conflict with video and webcam feed processing, resulting in laggy voice assistant responses. Consequently, this integration was not implemented in the current version.
+
+#### 4.3.3 Edge Level Deep Learning Optimization
+Investigation of methods to utilize trained deep learning models without major trade offs between RAM space consumption and rapid response mechanisms at the edge computing level. Currently, BYD utilizes DeepSeek AI technology at edge level within their vehicles through their dual AI application architecture.
+
+### 4.4 Current Prototype Limitations
+
+#### 4.4.1 Hardware and Performance Constraints
+
+**Camera Dependency** The entire system relies heavily on single webcam input. Performance will degrade significantly in poor lighting conditions including night driving, tunnels, and shadowed environments.
+
+**Field of View Limitations** A standard webcam may not capture the driver's complete facial structure if they turn their head significantly, leading to tracking loss and detection failures.
+
+**Resolution and Frame Rate** Lower quality webcams produce noisy data, negatively affecting the accuracy of facial landmark detection and vital sign estimation algorithms.
+
+**Browser Based Limitations** Running complex computer vision operations (TensorFlow.js) and physics simulations within a browser environment is resource intensive. This may cause performance lag or battery drain on mobile devices or lower specification laptops.
+
+#### 4.4.2 Algorithm and Accuracy Limitations
+
+**Simulated Measurements** Heart rate and breathing rate represent simulated estimates rather than medical grade measurements. These metrics are derived from facial cues (mouth opening, eye closure) and logic model analysis rather than actual physiological sensors. This approach can produce inaccuracies in certain scenarios.
+
+**Adrenaline and Stress Modeling** The adrenaline variable represents a simplified heuristic. Real physiological stress responses are far more complex and do not always correlate directly with mouth openness or eye closure patterns.
+
+**Facial Landmark Reliance** The system exhibits several dependencies:
+
+Occlusion issues arise when glasses, sunglasses, masks, or facial hair obstruct key landmarks (eyes, mouth), potentially breaking detection logic.
+
+Pose sensitivity problems occur when extreme head angles (looking down at mobile devices, looking backward) cause face mesh detection failures or produce erratic results.
+
+Hardcoded thresholds such as PANIC_THRESHOLD_MAR (0.45) and FAINT_THRESHOLD_EAR (0.40) in configuration files are static values. Different individuals possess different resting facial structures. A person with naturally smaller eyes might trigger false drowsiness alerts despite being fully alert.
+
+### 4.5 Future Enhancement Possibilities
+
+#### 4.5.1 Edge AI Optimization
+Optimize models to execute efficiently on specialized automotive processing chips, improving performance while reducing power consumption and latency.
+
+#### 4.5.2 Offline Capability
+Provide comprehensive offline capability ensuring all safety features remain operational (not limited to landmark detection, but including local inferencing) even without network connectivity.
+
+#### 4.5.3 Privacy and Security Enhancements
+Implement local data processing techniques ensuring sensitive information including biometric data does not leak beyond the vehicle boundary, maintaining user privacy and data security.
+
+#### 4.5.4 Augmented Reality Head Up Display (HUD)
+Potential integration of augmented reality HUD to project safety alerts and navigation guidance directly onto the windshield. However, this enhancement must align with security protocols and regulatory requirements specific to BYD's operational markets.
+
+#### 4.5.5 Multi Person Tracking
+If feasible from cost and architectural perspectives, expand the system to monitor all vehicle passengers. Implementation could utilize either a larger field of view camera positioned near the driver or an additional compact camera integrated into or mounted atop the touchscreen display panel.
